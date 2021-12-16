@@ -3,10 +3,12 @@
 Small Flask API for educational purposes
 
 ## Description
-storeapi it's a small api flask
 
-## Environment Variables
-This api server it's configured trough environment variables
+A key-value store API server written in Python, with a MongoDB backend.
+
+## Configuration
+
+The API server is configured through environment variables:
 
 | Environment Variable | Value               | Default Value             |
 |----------------------|---------------------|---------------------------|
@@ -14,13 +16,13 @@ This api server it's configured trough environment variables
 | MONGO_DB             | Mongo Database Name | restdb                    |
 
 ## Installation
-Dependencies:
+### Dependencies
 * python3
 * mongodb
 * python3-pip (optional)
 * virtualenv (optional)
 
-Deploy using virtualenv:
+### Deployment using virtualenv
 ```bash
 $ virtualenv -p python3.8 venv/py38
 $ source venv/py38/bin/activate
@@ -29,16 +31,19 @@ $ cd api
 $ python -m flask run --host=0.0.0.0
 ```
 
-## Test Installation
+## A sample installation done over an Ubuntu box
+### DB
+
 ```bash
-#DB
 wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 sudo systemctl start mongod
+```
 
-#APP
+### APP
+```bash
 sudo apt install python3 python3-pip virtualenv git
 git clone https://github.com/grobz/storeapi
 cd storeapi
@@ -48,7 +53,11 @@ pip install -r requirements.txt
 cd api
 python -m flask run --host=0.0.0.0
 
-#TESTS
+```
+
+### Tests
+
+```bash
 curl --location --request POST 'http://127.0.0.1:5000/api/add' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -60,7 +69,7 @@ curl --location --request GET 'http://127.0.0.1:5000/api/get'
 ```
 
 ## Usage
-This api has few methods to add / get / update information
+This api has few methods to add / get / update information.
 
 ### /api/get
 GET method to retrieve all keys in our database.
