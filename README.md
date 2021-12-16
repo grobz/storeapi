@@ -1,6 +1,6 @@
 # storeapi
 
-Small Flask API for educational purposes
+Small Flask API for educational purposes.
 
 ## Description
 
@@ -8,7 +8,7 @@ A key-value store API server written in Python, with a MongoDB backend.
 
 ## Configuration
 
-The API server is configured through environment variables:
+The API server is configured through environment variables.
 
 | Environment Variable | Value               | Default Value             |
 |----------------------|---------------------|---------------------------|
@@ -82,7 +82,7 @@ $ curl --location --request GET 'http://<IP>:<PORT>/api/get'
                 "KeyData1": 2,
                 "KeyData2": 11,
                 "KeyData3": 1,
-                "KeyData4": "Tete"
+                "KeyData4": "Avature"
             },
             "key": "Epsilon",
             "tags": {}
